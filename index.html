@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4: Children Book App</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="headerTitle">
+            <h1>tomes for tykes</h1>
+            <p>Not sure what your child should read next? Choose a category below and get a list of the weekly children book bestsellers from the New York Times Bestseller!</p>
+            <button>Start reading!</button>
+        </div>
+
+        <div class="headerImage">
+            <img src="./assets/cloudsun.png" alt="Cute image of a sun and cloud with rainbow droplets.">
+        </div>
+    </header>
+
+    <main>
+        <!-- Book Categories -->
+        <!-- ADD THE BUTTON STUFF HERE -->
+        <section>
+            <form action="#">
+                <fieldset class="pet">
+                    <legend>pick your pet:</legend>
+                
+                    <label aria-label="Click to add dog" for="dog">pup</label>
+                    <input aria-hidden="true" type="radio" name="pickPet" value="dog" id="dog">
+                
+                    <label aria-label="Click to add cat" for="cat">kit</label>
+                    <input aria-hidden="true" type="radio" name="pickPet" value="cat" id="cat">
+
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- Book List -->
+        <section>
+            <!-- Container for the List of Books -->
+            <div class="bookList"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrapper footerContainer">
+            <p>Designed by Bart Yellapu and Pik Lin</p>
+        </div>
+    </footer>
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
