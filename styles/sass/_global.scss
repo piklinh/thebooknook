@@ -1,0 +1,65 @@
+// Stripping Styles 
+
+html {
+    font-size: 62.5%;
+}
+
+body,
+h1,
+h2,
+p, 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.wrapper {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+input {
+    background: none;
+    border: none;
+}
+
+// General Styles
+
+h1 {
+    font-family: $primaryFont;
+    font-size: 8rem;
+    color: $primaryFontColor;
+    line-height: 1.6;
+    text-transform: lowercase;
+}
+
+p {
+    font-family: $secondaryFont;
+    font-size: 3rem;
+    color: $primaryFontColor;
+}
+
+button {
+    font-family: $primaryFont;
+    font-size: 2.4rem;
+    background-color: $buttonColor;
+    color: $tertiaryColor;
+    padding: 10px 15px;
+    border-radius: 5px;
+}

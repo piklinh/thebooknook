@@ -4,43 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 4: Children Book App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="headerTitle">
-            <h1>Bart was HERE</h1>
-            <p>Not sure what your child should read next? Choose a category below and get a list of the weekly children book bestsellers from the New York Times Bestseller!</p>
-            <button>Start reading!</button>
-        </div>
+        <div class="wrapper headerContainer">
+            <div class="headerTitle">
+                <h1>Bart was HERE</h1>
+                <p>Not sure what your child should read next? Choose a category below and get a list of the weekly children book bestsellers from the New York Times Bestseller!</p>
+                <button>Start reading!</button>
+            </div>
 
-        <div class="headerImage">
-            <img src="./assets/cloudsun.png" alt="Cute image of a sun and cloud with rainbow droplets.">
+            <div class="headerImage">
+                <img src="./assets/cloudsun.png" alt="Cute image of a sun and cloud with rainbow droplets.">
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Book Categories -->
-        <!-- ADD THE BUTTON STUFF HERE -->
-        <section>
-            <form action="#">
-                <fieldset class="pet">
-                    <legend>pick your pet:</legend>
-                
-                    <label aria-label="Click to add dog" for="dog">pup</label>
-                    <input aria-hidden="true" type="radio" name="pickPet" value="dog" id="dog">
-                
-                    <label aria-label="Click to add cat" for="cat">kit</label>
-                    <input aria-hidden="true" type="radio" name="pickPet" value="cat" id="cat">
-
-                </fieldset>
+        <section class="wrapper bookCategory">
+            <form action="#"> 
+                <ul>
+                    <li class="radioButton">
+                        <label aria-label="Click to add picture book list" for="pictureBook">Picture Book</label>
+                        <input aria-hidden="true" type="radio" name="bookCategory" value="pictureBook" id="pictureBook">
+                    </li>
+                    <li class="radioButton">
+                        <label aria-label="Click to add children book list" for="childrenBook">Children Book</label>
+                        <input aria-hidden="true" type="radio" name="bookCategory" value="childrenBook" id="childrenBook">
+                    </li>
+                    <li class="radioButton">
+                        <label aria-label="Click to add children series book list" for="seriesBook">Children Series</label>
+                        <input aria-hidden="true" type="radio" name="bookCategory" value="seriesBook" id="seriesBook">
+                    </li>
+                </ul>
             </form>
         </section>
 
         <!-- Book List -->
-        <section>
+        <section class="wrapper">
             <!-- Container for the List of Books -->
-            <div class="bookList"></div>
+            <div class="bookList">Book List to be generated in this container</div>
         </section>
     </main>
 
