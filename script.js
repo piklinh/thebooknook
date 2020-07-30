@@ -9,18 +9,18 @@ bookApp.scroll = function(event) {
 };
  
 
-// Type parameter will return data based on given variable - b
+// Type parameter will return data based on given variable 
 
-// variables for book category created for type - b
+// variables for book category created for type 
 const pictureBooks = "picture-books";
 const childrenMiddleGrade = "Childrens Middle Grade Hardcover";
-const SeriesBooks = "Series Books";
+const seriesBooks = "Series Books";
 
 
 // TO DO: Is there a way to use this instead of listing it on the URL
 bookApp.key = "bMG46sv2E3bGGar6zGp9djz6GRhQy78B"
 
-// Gets book list from the third-party API using AJAX request - b
+// Gets book list from the third-party API using AJAX request 
 // 
 
 // bookApp.getFormatData = function(data){
@@ -29,7 +29,7 @@ bookApp.key = "bMG46sv2E3bGGar6zGp9djz6GRhQy78B"
 // }
 
 
-// Create a generic api calling function called getList which will accept 1 parameter which is type -  it will get the data which is passed from parameter - b
+// Create a generic api calling function called getList which will accept 1 parameter which is type -  it will get the data which is passed from parameter 
 
 bookApp.getList = function(type) {
 
@@ -58,8 +58,6 @@ bookApp.getList = function(type) {
         bookApp.getList(type)
     }
 
-
-
 bookApp.displayList = function() {
 
 // To grab the value from the radio button
@@ -87,7 +85,7 @@ bookApp.init = function() {
     bookApp.displayList();
 }
 
-// changehandler function of radio button to push the each type variable
+// changehandler function of radio button to push the each type variable -b
 
 $('#pictureBook').on('change', function () {
     bookApp.radioButtonChangeHandler(pictureBooks)
@@ -98,7 +96,7 @@ $('#childrenBook').on('change', function () {
 });
 
 $('#seriesBook').on('change', function () {
-    bookApp.radioButtonChangeHandler(SeriesBooks)
+    bookApp.radioButtonChangeHandler(seriesBooks)
 });
 
 
