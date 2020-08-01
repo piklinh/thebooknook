@@ -7,7 +7,6 @@ bookApp.scroll = function(event) {
             scrollTop: $('main').offset().top}, 1000);
     });
 };
- 
 
 // // Type parameter will return data based on given variable - b
 
@@ -27,7 +26,6 @@ const seriesBooks = "Series Books";
 
 bookApp.getList = function(type) {
 
-
         $.ajax({
             url:'https://api.nytimes.com/svc/books/v3/lists?api-key=bMG46sv2E3bGGar6zGp9djz6GRhQy78B',
             method: 'GET',
@@ -37,25 +35,44 @@ bookApp.getList = function(type) {
                 list: `${type}`, 
                 // "picture-books"
             }
-
                 }).then(function(result) {
+
+                //     // console.log(result.results);
+                //     const res = result.results;
+                //     res.forEach((el) => {
+                //         console.log(el);
+                //     })
+                //     $.map(result, function () {
+                //         $('.bookList').append(`
+                //     <h2>${result.results[0].book_details[0].title}</h2>
+                //     <p>${result.results[0].book_details[0].author}</p>
+                //     <p>${result.results[0].book_details[0].description}</p>
+                //     <a>${result.results[0].amazon_product_url}</a>
+                //     <p>${result.results[0].rank}</p>
+                // `);
+
                 ///// TO DO: Need some kind of loop here to get each result
                 
                 // TEST CODE: console.log(result.results[0].book_details[0].title);
                     // bookApp.getFormatData(result)
+
                 let showResults = result.results.map(val => (val))
-                console.log( showResults);
-
-                let amazon =  showResults.map(val => (val.amazon_product_url))
-                // console.log(amazon);
-
-                let bookDetails = showResults.map(val => (val.book_details[0].author))
-                // console.log(bookDetails);
+                // console.log( showResults);
+                let amazonUrl =  showResults.map(val => (val.amazon_product_url))
+                console.log(amazonUrl);
+                let authorName = showResults.map(val => (val.book_details[0].author))
+                // console.log(authorName);
+                let title =  showResults.map(val => (val.book_details[0].title))
+                // console.log(title)
+                let bookDescription = showResults.map(val => (val.book_details[0].description))
+                // console.log(bookDescription);
+                let rank = showResults.map(val => val.rank)
+                // console.log (rank)
                 
-
                 });
-
     };
+
+
 
 // 
 //     // function for all radio buttons - Will pass type on radio button selection - the type will be passed through get list function - b
@@ -64,15 +81,16 @@ bookApp.getList = function(type) {
         bookApp.getList(type)
     }
 
-
 //     // changehandler function of radio button to push the each type variable -b
     
     $('#pictureBook').on('change', function () {
-        bookApp.radioButtonChangeHandler(pictureBooks)
+        bookApp.radioButtonChangeHandler(pictureBooks);
     });
     
     $('#childrenBook').on('change', function () {
-        bookApp.radioButtonChangeHandler(childrenMiddleGrade)
+
+    bookApp.radioButtonChangeHandler(childrenMiddleGrade)
+        
     });
     
     $('#seriesBook').on('change', function () {
@@ -93,6 +111,8 @@ bookApp.getList = function(type) {
 //     // });
 
 //     /////// To append book details with either forEach() or map()
+
+
 
 //     // 
 //     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> $.each to result to iterate through array  -  create template literals use this function<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
