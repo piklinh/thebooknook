@@ -74,6 +74,7 @@ bookApp.radioButtonChangeHandler = function (type) {
 // changehandler function of radio button to push the each type variable -b
     
     $('#pictureBook').on('change', function () {
+        $('#bookList').html("")
         bookApp.radioButtonChangeHandler(pictureBooks);
     });
     
@@ -82,10 +83,10 @@ bookApp.radioButtonChangeHandler = function (type) {
     });
     
     $('#seriesBook').on('change', function () {
+        $(".bookList").html("")
         bookApp.radioButtonChangeHandler(seriesBooks)
     });
 }
-
 
 // To initialize the app
 bookApp.init = function() {
