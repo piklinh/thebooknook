@@ -3,22 +3,22 @@ header {
     background-color: $primaryColor;
     height: 100vh;
     background-size: cover;
+}
 
-    .headerContainer {
-        display: flex;
-        padding-top: 150px;
+.headerContainer {
+    display: flex;
+    padding-top: 150px;
 
-        .headerTitle {
-            width: 60%;
+    .headerTitle {
+        width: 60%;
 
-            p {
-                padding-bottom: 20px;
-            }
+        p {
+            padding-bottom: 20px;
         }
+    }
 
-        .headerImage {
-            width: 40%;
-        }
+    .headerImage {
+        width: 40%;
     }
 }
 
@@ -55,7 +55,61 @@ ul {
     border-radius: 5px;
 }
 
+.radioButton label:hover {
+    background-color: $secondaryColor;
+}
+
 // Main: Book List
+
+.bookContainer {
+    background-color: $tertiaryColor;
+    height: 100%; 
+    padding: 30px 30px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.rankContainer {
+    width: calc(15% - 40px);
+}
+
+.infoContainer {
+    width: 85%;
+}
+
+h2,
+h3 {
+    padding-bottom: 10px;
+}
+
+p.bookDescription {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+button.productUrl {
+    margin-top: 15px;
+    background-color: $linkColor;
+}
+
+button.productUrl:hover {
+    background-color: darken($linkColor, 10);
+}
+
+button.productUrl:focus {
+    border: solid 3px $borderColor;
+}
+
+.ranking {
+    font-family: inherit;
+    font-size: 8rem;
+    color: $linkColor;
+}
+
+.bookContainer:last-child {
+    margin-bottom: 0;
+}
 
 // Footer 
 

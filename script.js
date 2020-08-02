@@ -8,131 +8,90 @@ bookApp.scroll = function(event) {
     });
 };
 
-// // Type parameter will return data based on given variable - b
-
-// // variables for book category created for type - b
-const pictureBooks = "picture-books";
-const childrenMiddleGrade = "Childrens Middle Grade Hardcover";
-const seriesBooks = "Series Books";
-
 
 // // TO DO: Is there a way to use this instead of listing it on the URL
 // bookApp.key = "bMG46sv2E3bGGar6zGp9djz6GRhQy78B"
 
-// // Gets book list from the third-party API using AJAX request 
-// // 
+// Type parameter will return data based on given variable 
+// Create variables for each book category that was created specifically for type 
+const pictureBooks = "picture-books";
+const childrenMiddleGrade = "childrens-middle-grade";
+const seriesBooks = "series-books";
 
+// // Gets book list from the third-party API using AJAX request 
 // // Create a generic api calling function called getList which will accept 1 parameter which is type -  it will get the data which is passed from parameter 
+
 
 bookApp.getList = function(type) {
 
         $.ajax({
-            url:'https://api.nytimes.com/svc/books/v3/lists?api-key=bMG46sv2E3bGGar6zGp9djz6GRhQy78B',
-            method: 'GET',
-            dataType: 'json',
-            data: {
-                ////// TO-DO: Find out how to get multiple lists and display when radio button clicked - solved 
-                list: `${type}`, 
-                // "picture-books"
+        url:'https://api.nytimes.com/svc/books/v3/lists?api-key=bMG46sv2E3bGGar6zGp9djz6GRhQy78B',
+        method: 'GET',
+        dataType: 'json',
+        data: {
+            list: `${type}`, 
             }
-                }).then(function(result) {
 
-                //     // console.log(result.results);
-                //     const res = result.results;
-                //     res.forEach((el) => {
-                //         console.log(el);
-                //     })
-                //     $.map(result, function () {
-                //         $('.bookList').append(`
-                //     <h2>${result.results[0].book_details[0].title}</h2>
-                //     <p>${result.results[0].book_details[0].author}</p>
-                //     <p>${result.results[0].book_details[0].description}</p>
-                //     <a>${result.results[0].amazon_product_url}</a>
-                //     <p>${result.results[0].rank}</p>
-                // `);
+        // Once the Ajax request is resolved successfully, use .then method to return a value that is stored in the result parameter
+        }).then(function(result) {
+            
+            // The result parameter initially contains an object, and the information that we needed is in an array called results 
+            // Created a variable called res to store the array
+            const res = result.results;
 
-                ///// TO DO: Need some kind of loop here to get each result
-                
-                // TEST CODE: console.log(result.results[0].book_details[0].title);
-                    // bookApp.getFormatData(result)
+            // Empties the text of the bookList div before forEach runs a loop
+            $('.bookList').text("");
 
-                let showResults = result.results.map(val => (val))
-                // console.log( showResults);
-                let amazonUrl =  showResults.map(val => (val.amazon_product_url))
-                console.log(amazonUrl);
-                let authorName = showResults.map(val => (val.book_details[0].author))
-                // console.log(authorName);
-                let title =  showResults.map(val => (val.book_details[0].title))
-                // console.log(title)
-                let bookDescription = showResults.map(val => (val.book_details[0].description))
-                // console.log(bookDescription);
-                let rank = showResults.map(val => val.rank)
-                // console.log (rank)
-                
-                });
-    };
+            // Use the forEach method to loop through the array
+            // It contains a callback function with each element of the array
+            // The elements of the array are stored into the parameter of el
+            res.forEach((el) =>{
 
+                // The data is then appended to the div of booklist
+                    $('.bookList').append(`
+                        <div class="bookContainer">
+                            <div class="rankContainer">
+                                <p class="ranking">${el.rank}</p>
+                            </div>
+                            <div class="infoContainer">
+                                <h2>${el.book_details[0].title}</h2>
+                                <h3>${el.book_details[0].author}</h3>
+                                <p class="bookDescription">Book Description:</p>
+                                <p class="bookDescription">${el.book_details[0].description}</p>
+                                <button class="productUrl"><a href="${el.amazon_product_url}">Get a copy!</a></button>   
+                            </div>
+                        </div>
+                    `);
+                })
+            })
+}
 
+// function for all radio buttons - Will pass type on radio button selection - the type will be passed through get list function - b
 
-// 
-//     // function for all radio buttons - Will pass type on radio button selection - the type will be passed through get list function - b
+bookApp.radioButtonChangeHandler = function (type) {
+    bookApp.getList(type)
 
-    bookApp.radioButtonChangeHandler = function (type) {
-        bookApp.getList(type)
-    }
-
-//     // changehandler function of radio button to push the each type variable -b
+// changehandler function of radio button to push the each type variable -b
     
     $('#pictureBook').on('change', function () {
         bookApp.radioButtonChangeHandler(pictureBooks);
     });
     
     $('#childrenBook').on('change', function () {
-
-    bookApp.radioButtonChangeHandler(childrenMiddleGrade)
-        
+      bookApp.radioButtonChangeHandler(childrenMiddleGrade) 
     });
     
     $('#seriesBook').on('change', function () {
         bookApp.radioButtonChangeHandler(seriesBooks)
     });
-
-
-// bookApp.displayList = function() {
-
-// // To grab the value from the radio button
-// ////// TO DO: Need to connect the value to the result from the AJAX API
-// ////// TO DO: To display one default list first
-
-//     // On change, grab the selected item from input 
-//     // $('input').on('change', function(event) {
-//     //     const grabItem = $(this).val();
-//     //     console.log(grabItem);
-//     // });
-
-//     /////// To append book details with either forEach() or map()
-
-
-
-//     // 
-//     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> $.each to result to iterate through array  -  create template literals use this function<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-//     // const ranking = 
-//     // const title = 
-//     // const author =
-//     // const description =
-//     // const purchaseLink = 
-// }
-
-// // To initialize the app
-bookApp.init = function() {
-    bookApp.scroll();
-    bookApp.getList();
-    // bookApp.displayList();
 }
 
 
-
+// To initialize the app
+bookApp.init = function() {
+    bookApp.scroll();
+    bookApp.getList();
+}
 
 // Document ready
 $(function() {
