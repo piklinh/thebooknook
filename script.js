@@ -8,16 +8,9 @@ bookApp.scroll = function(event) {
     });
 };
 
-// TO DO: Is there a way to use this instead of listing it on the URL
-bookApp.key = "bMG46sv2E3bGGar6zGp9djz6GRhQy78B"
 
-// Gets book list from the third-party API using AJAX request 
-
-// bookApp.getFormatData = function(data){
-//     data.forEach(result => {
-//     });
-// }
-
+// // TO DO: Is there a way to use this instead of listing it on the URL
+// bookApp.key = "bMG46sv2E3bGGar6zGp9djz6GRhQy78B"
 
 // Type parameter will return data based on given variable 
 // Create variables for each book category that was created specifically for type 
@@ -25,7 +18,9 @@ const pictureBooks = "picture-books";
 const childrenMiddleGrade = "childrens-middle-grade";
 const seriesBooks = "series-books";
 
-// Create a generic api calling function called getList which will accept 1 parameter which is type -  it will get the data which is passed from parameter 
+// // Gets book list from the third-party API using AJAX request 
+// // Create a generic api calling function called getList which will accept 1 parameter which is type -  it will get the data which is passed from parameter 
+
 
 bookApp.getList = function(type) {
 
@@ -67,9 +62,7 @@ bookApp.getList = function(type) {
                             </div>
                         </div>
                     `);
-
                 })
-
             })
 }
 
@@ -77,21 +70,21 @@ bookApp.getList = function(type) {
 
 bookApp.radioButtonChangeHandler = function (type) {
     bookApp.getList(type)
-}
 
 // changehandler function of radio button to push the each type variable -b
-
-$('#pictureBook').on('change', function () {
-    bookApp.radioButtonChangeHandler(pictureBooks)
-});
-
-$('#childrenBook').on('change', function () {
-    bookApp.radioButtonChangeHandler(childrenMiddleGrade)
-});
-
-$('#seriesBook').on('change', function () {
-    bookApp.radioButtonChangeHandler(seriesBooks)
-});
+    
+    $('#pictureBook').on('change', function () {
+        bookApp.radioButtonChangeHandler(pictureBooks);
+    });
+    
+    $('#childrenBook').on('change', function () {
+      bookApp.radioButtonChangeHandler(childrenMiddleGrade) 
+    });
+    
+    $('#seriesBook').on('change', function () {
+        bookApp.radioButtonChangeHandler(seriesBooks)
+    });
+}
 
 
 // To initialize the app
