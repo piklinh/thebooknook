@@ -43,23 +43,28 @@ bookApp.getList = function(type) {
             // The result parameter initially contains an object, and the information that we needed is in an array called results 
             // Created a variable called res to store the array
             const res = result.results;
-            console.log(result.results);
+
+            // Empties the text of the bookList div before forEach runs a loop
+            $('.bookList').text("");
 
             // Use the forEach method to loop through the array
             // It contains a callback function with each element of the array
             // The elements of the array are stored into the parameter of el
             res.forEach((el) =>{
-                console.log(el);
 
                 // The data is then appended to the div of booklist
-                // TO-DO: To append the items properly into the HTML (e.g. button)
                     $('.bookList').append(`
-                        <div>
-                            <p>${el.rank}</p>
-                            <h2>${el.book_details[0].title}</h2>
-                            <p>${el.book_details[0].author}</p>
-                            <p>Book Description: ${el.book_details[0].description}</p>
-                            <button>${el.amazon_product_url}</button>   
+                        <div class="bookContainer">
+                            <div class="rankContainer">
+                                <p class="ranking">${el.rank}</p>
+                            </div>
+                            <div class="infoContainer">
+                                <h2>${el.book_details[0].title}</h2>
+                                <h3>${el.book_details[0].author}</h3>
+                                <p class="bookDescription">Book Description:</p>
+                                <p class="bookDescription">${el.book_details[0].description}</p>
+                                <button class="productUrl"><a href="${el.amazon_product_url}">Get a copy!</a></button>   
+                            </div>
                         </div>
                     `);
 
@@ -88,34 +93,11 @@ $('#seriesBook').on('change', function () {
     bookApp.radioButtonChangeHandler(seriesBooks)
 });
 
-// TO-DO: Figure out a way to hide/empty/detach the information that is not needed in the app
-// TO-DO: Leaving the commented out area below as we try to figure out how to resolve this
-
-// When User clicked on the input of 'bookCategory', the input that is checked will return a value
-// The value will be stored in a variable called radioValue
-
-// $("input[name='bookCategory']").click(function() {
-//     const radioValue = $("input[name='bookCategory']:checked").val();
-
-// // If radioValue is pictureBook, it should hide/empty/detach the results of the others
-//     if (radioValue === 'pictureBook') {
-//         console.log('This is picture book');
-//         $('childrenBookRes').hide();
-//         $('seriesBookRes').hide();
-//     } else if (radioValue === 'childrenBook') {
-//         $('pictureBookRes').hide();
-//         $('seriesBookRes').hide();
-//     } else (radioValue === 'seriesBook')
-//         $('pictureBookRes').hide();
-//         $('childrenBookRes').hide();
-// })
-
 
 // To initialize the app
 bookApp.init = function() {
     bookApp.scroll();
     bookApp.getList();
-    // bookApp.displayList();
 }
 
 // Document ready

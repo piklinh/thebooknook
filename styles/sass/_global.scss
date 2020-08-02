@@ -7,14 +7,17 @@ html {
 body,
 h1,
 h2,
+h3,
 p, 
-ul {
+ul,
+li {
     margin: 0;
     padding: 0;
 }
 
 ul {
     list-style: none;
+    padding-bottom: 50px;
 }
 
 img {
@@ -39,6 +42,11 @@ input {
     border: none;
 }
 
+a {
+    text-decoration: none;
+    color: $tertiaryColor;
+}
+
 // General Styles
 
 h1 {
@@ -47,6 +55,19 @@ h1 {
     color: $primaryFontColor;
     line-height: 1.6;
     text-transform: lowercase;
+}
+
+h2 {
+    font-family: $primaryFont;
+    color: $primaryFontColor;
+    font-size: 5rem;
+    text-transform: capitalize;
+}
+
+h3 {
+    font-family: $primaryFont;
+    color: $secondaryColor;
+    font-size: 4rem;
 }
 
 p {
@@ -58,8 +79,8 @@ p {
 button {
     font-family: $primaryFont;
     font-size: 2.4rem;
-    background-color: $buttonColor;
+    background-color: $buttonRankColor;
     color: $tertiaryColor;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 5px;
 }
