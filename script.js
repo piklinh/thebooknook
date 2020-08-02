@@ -81,11 +81,11 @@ $('#pictureBook').on('change', function () {
 });
 
 $('#childrenBook').on('change', function () {
-    const childrenBookRes = bookApp.radioButtonChangeHandler(childrenMiddleGrade)
+    bookApp.radioButtonChangeHandler(childrenMiddleGrade)
 });
 
 $('#seriesBook').on('change', function () {
-    const seriesBookRes = bookApp.radioButtonChangeHandler(seriesBooks)
+    bookApp.radioButtonChangeHandler(seriesBooks)
 });
 
 // TO-DO: Figure out a way to hide/empty/detach the information that is not needed in the app
