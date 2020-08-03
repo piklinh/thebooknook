@@ -1,12 +1,17 @@
 
 /* Portrait tablet and small desktops */
+
 @media (max-width: 940px) {
+
     .ranking {
         font-size: 5rem;
     }
 }
+
 /* Landscape phone to portrait tablet */
+
 @media (max-width: 768px) {
+
     ul{
         flex-wrap: wrap;
     }
@@ -24,7 +29,12 @@
     }
 }
 /* Landscape phones and down */
+
 @media (max-width: 480px) {
+
+    header {
+        height: 85vh;
+    }
 
     .headerContainer {
         display: block;
@@ -42,9 +52,6 @@
         display: none;
     }
 
-    h1 {
-        line-height: 1.2 ;
-    }
     h2 {
         font-size: 4rem;
     }
@@ -56,16 +63,12 @@
 
 @media (max-width: 320px) {
 
-    header {
-        height: 85vh;
-    }
-
     .headerContainer {
         padding-top: 75px;
+        padding-bottom: 75px;
         
         .headerTitle p {
             padding-bottom: 20px;
-            
         }
     }
 

@@ -286,7 +286,7 @@ h1 {
   font-family: "Roboto", sans-serif;
   font-size: 8rem;
   color: #383838;
-  line-height: 1.6;
+  line-height: 1.2;
   text-transform: capitalize;
 }
 
@@ -344,18 +344,11 @@ header {
 
 .headerContainer .headerTitle {
   width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
+.headerContainer .headerTitle h1,
 .headerContainer .headerTitle p {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .headerContainer .headerImage {
@@ -364,6 +357,7 @@ header {
 
 main {
   background-color: #DDF3F5;
+  padding-top: 150px;
 }
 
 .bookCategory {
@@ -493,6 +487,9 @@ footer p {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  header {
+    height: 85vh;
+  }
   .headerContainer {
     display: block;
   }
@@ -505,9 +502,6 @@ footer p {
   img {
     display: none;
   }
-  h1 {
-    line-height: 1.2;
-  }
   h2 {
     font-size: 4rem;
   }
@@ -517,11 +511,9 @@ footer p {
 }
 
 @media (max-width: 320px) {
-  header {
-    height: 85vh;
-  }
   .headerContainer {
     padding-top: 75px;
+    padding-bottom: 75px;
   }
   .headerContainer .headerTitle p {
     padding-bottom: 20px;

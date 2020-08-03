@@ -1,4 +1,5 @@
 // Header
+
 header {
     background-color: $primaryColor;
     height: 100vh;
@@ -12,12 +13,10 @@ header {
     
     .headerTitle {
         width: 60%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
         
+        h1,
         p {
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
     }
 
@@ -27,8 +26,10 @@ header {
 }
 
 // Main: Book Categories
+
 main {
     background-color: $primaryColor;
+    padding-top: 150px;
 }
 
 .bookCategory {
