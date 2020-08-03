@@ -492,6 +492,7 @@ footer p {
   }
   .headerContainer {
     display: block;
+    padding: 75px 0;
   }
   .headerContainer .headerTitle {
     width: 100%;
@@ -511,10 +512,6 @@ footer p {
 }
 
 @media (max-width: 320px) {
-  .headerContainer {
-    padding-top: 75px;
-    padding-bottom: 75px;
-  }
   .headerContainer .headerTitle p {
     padding-bottom: 20px;
   }
