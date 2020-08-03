@@ -53,7 +53,7 @@ h1 {
     font-family: $primaryFont;
     font-size: 8rem;
     color: $primaryFontColor;
-    line-height: 1.6;
+    line-height: 1.2;
     text-transform: capitalize;
 }
 
@@ -85,13 +85,12 @@ button {
     border-radius: 5px;
 
     &:hover{
-        // font-weight: bolder;
         color: $primaryFontColor;
         transition-delay: .25s;
     }
 
     &:focus{
-        border: solid 2px #B7B7B7;
-        background-color: lighten($color: #E36387, $amount: 10);
+        border: solid 2px $borderColor;
+        background-color: lighten($buttonRankColor, 10);
     }
 }
