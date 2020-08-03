@@ -8,19 +8,14 @@ bookApp.scroll = function(event) {
     });
 };
 
-
-// // TO DO: Is there a way to use this instead of listing it on the URL
-// bookApp.key = "bMG46sv2E3bGGar6zGp9djz6GRhQy78B"
-
 // Type parameter will return data based on given variable 
-// Create variables for each book category that was created specifically for type 
+// Create variables for each book category - created specifically for type 
 const pictureBooks = "picture-books";
 const childrenMiddleGrade = "childrens-middle-grade";
 const seriesBooks = "series-books";
 
-// // Gets book list from the third-party API using AJAX request 
-// // Create a generic api calling function called getList which will accept 1 parameter which is type -  it will get the data which is passed from parameter 
-
+// Gets book list from the third-party API using AJAX request 
+// Create a generic api calling function called getList which will accept type -  to pull data which is passed from parameter 
 
 bookApp.getList = function(type) {
 
@@ -36,6 +31,7 @@ bookApp.getList = function(type) {
         }).then(function(result) {
             
             // The result parameter initially contains an object, and the information that we needed is in an array called results 
+
             // Created a variable called res to store the array
             const res = result.results;
 
@@ -66,27 +62,26 @@ bookApp.getList = function(type) {
             })
 }
 
-// function for all radio buttons - Will pass type on radio button selection - the type will be passed through get list function - b
+// function for all radio buttons - Will pass type on radio button selection - the type will be passed through getList function 
 
 bookApp.radioButtonChangeHandler = function (type) {
     bookApp.getList(type)
+}
 
-// changehandler function of radio button to push the each type variable -b
-    
+// changehandler function of radio button to push the each type variable
+
     $('#pictureBook').on('change', function () {
-        $('#bookList').html("")
         bookApp.radioButtonChangeHandler(pictureBooks);
     });
     
     $('#childrenBook').on('change', function () {
-      bookApp.radioButtonChangeHandler(childrenMiddleGrade) 
+        bookApp.radioButtonChangeHandler(childrenMiddleGrade) 
     });
     
     $('#seriesBook').on('change', function () {
-        $(".bookList").html("")
         bookApp.radioButtonChangeHandler(seriesBooks)
     });
-}
+
 
 // To initialize the app
 bookApp.init = function() {

@@ -54,7 +54,7 @@ h1 {
     font-size: 8rem;
     color: $primaryFontColor;
     line-height: 1.6;
-    text-transform: lowercase;
+    text-transform: capitalize;
 }
 
 h2 {
@@ -83,4 +83,15 @@ button {
     color: $tertiaryColor;
     padding: 10px 20px;
     border-radius: 5px;
+
+    &:hover{
+        // font-weight: bolder;
+        color: $primaryFontColor;
+        transition-delay: .25s;
+    }
+
+    &:focus{
+        border: solid 2px #B7B7B7;
+        background-color: lighten($color: #E36387, $amount: 10);
+    }
 }
