@@ -377,8 +377,6 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .radioButton input[type="radio"] {
@@ -401,14 +399,9 @@ ul {
 }
 
 .radioButton label:hover {
-  color: lighten #383838, 20%;
-  font-weight: bolder;
   -webkit-transition-delay: .25s;
           transition-delay: .25s;
-}
-
-.radioButton label:hover {
-  background-color: #A6DCEF;
+  background-color: #50badf;
 }
 
 .bookContainer {
@@ -471,4 +464,79 @@ footer {
 footer p {
   font-size: 2rem;
   padding: 20px 0;
+}
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  .ranking {
+    font-size: 5rem;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .bookContainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .rankContainer {
+    width: 100%;
+  }
+  .infoContainer {
+    width: 100%;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .headerContainer {
+    display: block;
+  }
+  .headerContainer .headerTitle {
+    width: 100%;
+  }
+  .headerImage {
+    width: 100%;
+  }
+  img {
+    display: none;
+  }
+  h1 {
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    height: 85vh;
+  }
+  .headerContainer {
+    padding-top: 75px;
+  }
+  .headerContainer .headerTitle p {
+    padding-bottom: 20px;
+  }
+  h1 {
+    font-size: 6rem;
+    padding-bottom: 10px;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  p.bookDescription {
+    font-size: 2rem;
+  }
 }

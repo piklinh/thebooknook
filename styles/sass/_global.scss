@@ -91,7 +91,7 @@ button {
     }
 
     &:focus{
-        border: solid 2px $borderColor;
+        border: solid 2px #B7B7B7;
         background-color: lighten($color: #E36387, $amount: 10);
     }
 }
