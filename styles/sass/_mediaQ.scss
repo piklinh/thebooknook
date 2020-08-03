@@ -38,7 +38,7 @@
 
     .headerContainer {
         display: block;
-        padding: 75px 0;
+        padding-top: 75px;
 
         .headerTitle {
             width: 100%;
@@ -59,6 +59,10 @@
 
     h3 { 
         font-size: 3.5rem;
+    }
+
+    .radioButton label {
+        font-size: 3rem;
     }
 }
 

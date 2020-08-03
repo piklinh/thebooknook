@@ -13,6 +13,9 @@ bookApp.scroll = function(event) {
 const pictureBooks = "picture-books";
 const childrenMiddleGrade = "childrens-middle-grade";
 const seriesBooks = "series-books";
+const yaBooks = 'young-adult';
+const graphicBooks = 'graphic-books-and-manga';
+const activitiesBooks = 'games-and-activities';
 
 // Gets book list from the third-party API using AJAX request 
 // Create a generic api calling function called getList which will accept type -  to pull data which is passed from parameter 
@@ -82,7 +85,19 @@ bookApp.radioButtonChangeHandler = function (type) {
         bookApp.radioButtonChangeHandler(seriesBooks)
     });
 
+    $('#yaBooks').on('change', function () {
+        bookApp.radioButtonChangeHandler(yaBooks);
+    });
+    
+    $('#graphicBook').on('change', function () {
+        bookApp.radioButtonChangeHandler(graphicBooks) 
+    });
+    
+    $('#activitiesBook').on('change', function () {
+        bookApp.radioButtonChangeHandler(activitiesBooks)
+    });
 
+    
 // To initialize the app
 bookApp.init = function() {
     bookApp.scroll();
