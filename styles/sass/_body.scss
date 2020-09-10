@@ -62,7 +62,6 @@ ul {
 }
 
 .radioButton label:hover {
-    transition-delay: .25s;
     background-color: darken($secondaryColor, 20);
 }
 
@@ -96,7 +95,7 @@ p.bookDescription {
 }
 
 button.productUrl {
-    margin-top: 15px;
+    margin-top: 20px;
     background-color: $linkColor;
 }
 
@@ -128,4 +127,19 @@ footer {
         font-size: 2rem;
         padding: 20px 0;
     }
+
+    .creditLink {
+        color: $tertiaryColor;
+    }
+    
+    .creditLink:hover {
+        padding-bottom: 3px;
+        border-bottom: 2px solid $tertiaryColor;
+        
+    }
+
+    .creditLink:focus {
+        color: $linkColor;
+    }
+
 }

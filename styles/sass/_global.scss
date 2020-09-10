@@ -44,7 +44,6 @@ input {
 
 a {
     text-decoration: none;
-    color: $tertiaryColor;
 }
 
 // General Styles
@@ -86,7 +85,6 @@ button {
 
     &:hover{
         color: $primaryFontColor;
-        transition-delay: .25s;
     }
 
     &:focus{

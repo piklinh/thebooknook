@@ -279,7 +279,6 @@ input {
 
 a {
   text-decoration: none;
-  color: white;
 }
 
 h1 {
@@ -320,8 +319,6 @@ button {
 
 button:hover {
   color: #383838;
-  -webkit-transition-delay: .25s;
-          transition-delay: .25s;
 }
 
 button:focus {
@@ -393,8 +390,6 @@ ul {
 }
 
 .radioButton label:hover {
-  -webkit-transition-delay: .25s;
-          transition-delay: .25s;
   background-color: #50badf;
 }
 
@@ -428,7 +423,7 @@ p.bookDescription {
 }
 
 button.productUrl {
-  margin-top: 15px;
+  margin-top: 20px;
   background-color: #F2AAAA;
 }
 
@@ -458,6 +453,19 @@ footer {
 footer p {
   font-size: 2rem;
   padding: 20px 0;
+}
+
+footer .creditLink {
+  color: white;
+}
+
+footer .creditLink:hover {
+  padding-bottom: 3px;
+  border-bottom: 2px solid white;
+}
+
+footer .creditLink:focus {
+  color: #F2AAAA;
 }
 
 /* Portrait tablet and small desktops */
