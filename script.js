@@ -8,7 +8,6 @@ bookApp.getList = (listName) => {
         method: 'GET',
         dataType: 'json',
 
-        // Once the Ajax request is resolved successfully, use .then method to return a value that is stored in the result parameter
         }).then((res) => {
             
             // The result parameter initially contains an object, and the information that we needed is in an array called results 
@@ -33,8 +32,8 @@ bookApp.getList = (listName) => {
                                 <h2>${el.title}</h2>
                                 <h3>${el.author}</h3>
                                 <p class="bookDescription">Book Description:</p>
-                                <p class="bookDescription">${el.description}</p>
-                                <button href="${el.amazon_product_url}" class="productUrl">Get a copy!</button>
+                                <p class="bookDescription bookDetails">${el.description}</p>
+                                <button><a href="${el.amazon_product_url}" class="productUrl" target="_blank" rel="noopener noreferrer">Get a copy!</a></button>
                             </div>
                         </div>
                     `);
@@ -73,6 +72,6 @@ $(function() {
     bookApp.init();
 })
 
-// TO DO: Add three more book categories
 // TO DO: Add button in the end, it should appear after the list is generated. Might have to setTimeOut
-// TO DO: Re-style some elements
+// TO DO: Re-style and add accessibility to the buttons
+// TO DO: Error handling for first click / missing book descriptions/book cover

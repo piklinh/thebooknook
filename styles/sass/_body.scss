@@ -29,7 +29,11 @@ header {
 
 main {
     background-color: $primaryColor;
-    padding-top: 150px;
+    padding-top: 100px;
+}
+
+section {
+    padding: 50px 0;
 }
 
 .bookCategory {
@@ -39,6 +43,7 @@ main {
 ul {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .radioButton input[type="radio"] {
@@ -74,22 +79,31 @@ ul {
     margin-bottom: 50px;
     border-radius: 10px;
     display: flex;
+    align-items: flex-start;
 }
 
 .rankContainer {
-    width: calc(15% - 40px);
+    width: calc(30% - 30px);
+    margin: 0 30px 20px 0;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
 }
 
 .infoContainer {
-    width: 85%;
+    width: calc(70% - 30px);
 }
 
 h2,
-h3 {
+h3,
+.bookDetails {
     padding-bottom: 10px;
 }
 
-p.bookDescription {
+.bookDescription {
     font-size: 2.5rem;
     line-height: 1.2;
 }
@@ -128,17 +142,17 @@ footer {
         padding: 20px 0;
     }
 
-    .creditLink {
-        color: $tertiaryColor;
+    a.creditLink {
+        color: $fourthColor;
     }
     
-    .creditLink:hover {
+    a.creditLink:hover {
         padding-bottom: 3px;
-        border-bottom: 2px solid $tertiaryColor;
+        border-bottom: 2px solid $fourthColor;
         
     }
 
-    .creditLink:focus {
+    a.creditLink:focus {
         color: $linkColor;
     }
 

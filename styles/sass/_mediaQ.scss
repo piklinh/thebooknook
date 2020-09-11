@@ -5,6 +5,7 @@
     .ranking {
         font-size: 5rem;
     }
+
 }
 
 /* Landscape phone to portrait tablet */
@@ -21,6 +22,11 @@
 
     .rankContainer {
         width:100%;
+        margin: 0 0 20px 0;
+
+        img {
+            width: 100%;
+        }
     }
 
     .infoContainer {
@@ -34,6 +40,10 @@
 
     header {
         height: 85vh;
+
+        img {
+            display: none;
+        }
     }
 
     .headerContainer {
@@ -47,10 +57,6 @@
 
     .headerImage {
         width: 100%;
-    }
-    
-    img {
-        display: none;
     }
 
     h2 {
