@@ -272,11 +272,6 @@ button {
   margin: 0 auto;
 }
 
-input {
-  background: none;
-  border: none;
-}
-
 a {
   text-decoration: none;
   color: #FFFFFF;
@@ -293,14 +288,13 @@ h1 {
 h2 {
   font-family: "Roboto", sans-serif;
   color: #383838;
-  font-size: 4rem;
-  text-transform: capitalize;
+  font-size: 5rem;
 }
 
 h3 {
   font-family: "Roboto", sans-serif;
   color: #A6DCEF;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 p {
@@ -309,20 +303,23 @@ p {
   color: #383838;
 }
 
-button {
+.startButton,
+a {
   font-family: "Roboto", sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   background-color: #E36387;
   color: #FFFFFF;
   padding: 10px 20px;
   border-radius: 5px;
 }
 
-button:hover {
+.startButton:hover,
+a:hover {
   color: #383838;
 }
 
-button:focus {
+.startButton:focus,
+a:focus {
   border: solid 2px #B7B7B7;
   background-color: #eb8ea8;
 }
@@ -355,15 +352,20 @@ header {
 
 main {
   background-color: #DDF3F5;
-  padding-top: 100px;
 }
 
-section {
-  padding: 50px 0;
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .bookCategory {
   padding-top: 100px;
+}
+
+section:last-child {
+  padding-bottom: 100px;
 }
 
 ul {
@@ -375,15 +377,12 @@ ul {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 250px;
+          flex: 1 0 250px;
 }
 
-.radioButton input[type="radio"] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
-
-.radioButton label {
+.radioButton {
   display: inline-block;
   font-family: "Cormorant Garamond", serif;
   font-size: 4rem;
@@ -396,7 +395,9 @@ ul {
   cursor: pointer;
 }
 
-.radioButton label:hover {
+.radioButton:hover,
+.radioButton:focus,
+.radioButton:active {
   background-color: #50badf;
 }
 
@@ -431,8 +432,7 @@ ul {
 }
 
 h2,
-h3,
-.bookDetails {
+h3 {
   padding-bottom: 10px;
 }
 
@@ -441,17 +441,8 @@ h3,
   line-height: 1.2;
 }
 
-button.productUrl {
-  margin-top: 20px;
-  background-color: #F2AAAA;
-}
-
-button.productUrl:hover {
-  background-color: #eb7e7e;
-}
-
-button.productUrl:focus {
-  border: solid 3px #B7B7B7;
+.bookDetails {
+  padding-bottom: 20px;
 }
 
 .ranking {
@@ -475,7 +466,11 @@ footer p {
 }
 
 footer a.creditLink {
+  font-family: "Cormorant Garamond", serif;
   color: #E36387;
+  background-color: inherit;
+  padding: 0;
+  border-radius: inherit;
 }
 
 footer a.creditLink:hover {
@@ -496,6 +491,19 @@ footer a.creditLink:focus {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
+  .headerContainer {
+    padding: 75px 0;
+  }
+  h1 {
+    font-size: 6rem;
+  }
+  .headerTitle p {
+    font-size: 2.5rem;
+  }
+  .radioButton {
+    font-size: 3rem;
+    padding: 10px 20px;
+  }
   ul {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -516,29 +524,40 @@ footer a.creditLink:focus {
   }
 }
 
-/* Landscape phones and down */
-@media (max-width: 480px) {
-  header {
-    height: 85vh;
-  }
-  header img {
-    display: none;
-  }
+@media (max-width: 600px) {
   .headerContainer {
-    display: block;
-    padding: 75px 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
   .headerContainer .headerTitle {
     width: 100%;
   }
-  .headerImage {
-    width: 100%;
+  .headerContainer .headerImage {
+    width: 60%;
   }
-  h2 {
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .radioButton {
+    font-size: 2rem;
+  }
+  h1 {
     font-size: 4rem;
   }
-  h3 {
-    font-size: 3.5rem;
+  h2 {
+    font-size: 3rem;
+  }
+  h3,
+  .headerTitle p,
+  p.bookDescription {
+    font-size: 2rem;
+  }
+  footer p,
+  a.creditLink {
+    font-size: 1.6rem;
   }
 }
 
@@ -547,16 +566,6 @@ footer a.creditLink:focus {
     padding-bottom: 20px;
   }
   h1 {
-    font-size: 6rem;
     padding-bottom: 10px;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  h3 {
-    font-size: 2.5rem;
-  }
-  p.bookDescription {
-    font-size: 2rem;
   }
 }

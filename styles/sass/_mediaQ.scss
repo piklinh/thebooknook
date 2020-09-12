@@ -12,6 +12,23 @@
 
 @media (max-width: 768px) {
 
+    .headerContainer {
+        padding: 75px 0;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    .headerTitle p {
+        font-size: 2.5rem;
+    }
+
+    .radioButton {
+        font-size: 3rem;
+        padding: 10px 20px;
+    }
+
     ul{
         flex-wrap: wrap;
     }
@@ -34,37 +51,47 @@
     }
 }
 
-/* Landscape phones and down */
 
-@media (max-width: 480px) {
-
-    header {
-        height: 85vh;
-
-        img {
-            display: none;
-        }
-    }
+@media (max-width: 600px) {
 
     .headerContainer {
-        display: block;
-        padding: 75px 0;
+        flex-direction: column-reverse;
 
         .headerTitle {
             width: 100%;
         }
+        
+        .headerImage {
+            width: 60%;
+        }
+    }
+}
+
+/* Landscape phones and down */
+
+@media (max-width: 480px) {
+
+    .radioButton {
+        font-size: 2rem;
     }
 
-    .headerImage {
-        width: 100%;
-    }
-
-    h2 {
+    h1 {
         font-size: 4rem;
     }
 
-    h3 { 
-        font-size: 3.5rem;
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3,
+    .headerTitle p,
+    p.bookDescription {
+        font-size: 2rem;
+    }
+
+    footer p,
+    a.creditLink {
+        font-size: 1.6rem;
     }
 }
 
@@ -77,20 +104,7 @@
     }
 
     h1 {
-        font-size: 6rem;
         padding-bottom: 10px;
-    }
-
-    h2 {
-        font-size: 3rem;
-    }
-
-    h3 {
-        font-size: 2.5rem;
-    }
-
-    p.bookDescription {
-        font-size: 2rem;
     }
 
 }
