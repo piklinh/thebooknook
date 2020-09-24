@@ -10,39 +10,84 @@ bookApp.getList = (listName) => {
 
         }).then((res) => {
             
-            // The result parameter initially contains an object, and the information that we needed is in an array called results 
-            // Created a variable called bookRes to store the array
-            const bookRes = res.results.books;
-
-            // Empties the text of the bookList div before forEach runs a loop
-            $('.bookList').text("");
-
-            // Use the forEach method to loop through the array, with a callback function containing the elements of the array, which are then stored in the parameter of 'el'
-            bookRes.forEach((el) => {
-
-                // The data is then appended to the div of booklist
-                    $('.bookList').append(`
-                        <div class="bookContainer">
-                            <div class="rankContainer">
-                                <img src="${el.book_image}" alt="${el.description}">
-                            </div>
-                            <div class="infoContainer">
-                                <p class="ranking">${el.rank}</p>
-                                <h2>${el.title}</h2>
-                                <h3>${el.author}</h3>
-                                <p class="bookDescription">Book Description:</p>
-                                <p class="bookDescription bookDetails">${el.description}</p>
-                                <a href="${el.amazon_product_url}" class="productUrl" target="_blank" rel="noopener noreferrer">Get a copy!</a>
-                            </div>
-                        </div>
-                    `);
-                })
+            // Empties the text of the bookList div
+            $('.bookList').empty();
+            bookApp.displayList(res.results.books);
             })
     }
 
+bookApp.displayList = (bookRes) => {
+    
+    // Use the forEach method to loop through the array, with a callback function containing the elements of the array, which are then stored in the parameter of 'el'
+    bookRes.forEach((el) => {
+
+        const dataFromBookRes = el;
+        // console.log(dataFromBookRes);
+
+        // The data is then appended to the div of booklist
+            $('.bookList').append(`
+                <div class="bookContainer ${el.primary_isbn10}">
+                    <div class="imageContainer">
+                        <img src="${el.book_image}" alt="${el.description}">
+                    </div>
+
+                    <div class="contentContainer"> 
+                        <div class="infoContainer">
+                            <p class="ranking">${el.rank}</p>
+                            <h2>${el.title}</h2>
+                            <h3>${el.author}</h3>
+                            <p class="bookDescription">Book Description:</p>
+                            <p class="bookDescription bookDetails">${el.description}</p>
+                            <a href="${el.amazon_product_url}" class="productUrl" target="_blank" rel="noopener noreferrer">Get a copy!</a>
+                        </div>
+                        <div class="buttonContainer">
+                            <button class="addBook"><i class="fas fa-heart" value="${el.primary_isbn10}"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `);
+        })
+
+        bookApp.addFav();
+}
+
+bookApp.addFav = () => {
+
+    const dbRef = firebase.database().ref("fav");
+        const $addBook = $('.addBook');
+
+        $addBook.on('click', function(e) {
+            
+            // const btn = e.target.attributes.value.value;
+            const btn = e.target;
+            
+            console.log(dataFromBookRes);
+            // console.log(btn);
+
+            // const selectedBook = $(`.${btn}`).html();
+            // console.log(selectedBook);
+
+            // dbRef.push(selectedBook); 
+
+            // console.log(selectedBook);
+            // bookRes.forEach((el) => {
+            //     // console.log(image);
+    
+            //     const bookToDb = {
+            //         key: el.primary_isbn10,
+            //         image: el.book_image,
+            //         title: el.title,
+            //         author: el.author
+            //     }
+    
+            //     dbRef.push(bookToDb);
+            // })
+
+        })
+}
 // Button that listens to input and updates the value
-bookApp.eventListener = () => {
-    $('.radioButton').on('click', function() {
+bookApp.bookCategoryButton = () => {
+    $('.bookCategoryButton').on('click', function(event) {
         event.preventDefault();
         const bookInput = $(this).val();
 
@@ -52,7 +97,7 @@ bookApp.eventListener = () => {
 
 // Scroll button for the header to top of page to start reading
 bookApp.scroll = () => {
-    $('button').on('click', function() {
+    $('startButton').on('click', function() {
         $('html').animate( {
             scrollTop: $('main').offset().top}, 1000);
     });
@@ -60,12 +105,13 @@ bookApp.scroll = () => {
 
 // To initialize the app
 bookApp.init = () => {
-    bookApp.scroll();
-    bookApp.eventListener();
-    bookApp.getList();
+    bookApp.bookCategoryButton();
+    bookApp.getList('picture-books');
 }
 
 // Document ready
 $(function() {
     bookApp.init();
 })
+
+// TO DO: Managed to target specific item in displayed list to push to Firebase. To append data from Firebase to be displayed as saved/to-read list at the bottom of the page in a new section

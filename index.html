@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link type="image/png" rel="icon" href="./assets/sun.png">
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://kit.fontawesome.com/6543405859.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
@@ -30,22 +31,22 @@
             <form action="#"> 
                 <ul>
                     <li>
-                        <button class="radioButton" type="submit" name="bookCategory" value="picture-books" id="pictureBook">Picture Books</button>
+                        <button class="bookCategoryButton" type="submit" name="bookCategory" value="picture-books" id="pictureBook">Picture Books</button>
                     </li>
                     <li>
-                        <button class="radioButton" type="submit" name="bookCategory" value="childrens-middle-grade" id="childrenBook">Children Books</button>
+                        <button class="bookCategoryButton" type="submit" name="bookCategory" value="childrens-middle-grade" id="childrenBook">Children Books</button>
                     </li>
                     <li>
-                        <button class="radioButton" type="submit" name="bookCategory" value="series-books" id="seriesBook">Children Series</button>
+                        <button class="bookCategoryButton" type="submit" name="bookCategory" value="series-books" id="seriesBook">Children Series</button>
                     </li>
                     <li>
-                        <button class="radioButton" type="submit" name="bookCategory" value="young-adult" id="youngAdult">Young Adult</button>
+                        <button class="bookCategoryButton" type="submit" name="bookCategory" value="young-adult" id="youngAdult">Young Adult</button>
                     </li>
                     <li>
-                        <button class="radioButton" type="submit" name="bookCategory" value="games-and-activities" id="gamesActivities">Activity Books</button>
+                        <button class="bookCategoryButton" type="submit" name="bookCategory" value="games-and-activities" id="gamesActivities">Activity Books</button>
                     </li>
                     <li>
-                        <button class="radioButton" type="submit" name="bookCategory" value="graphic-books-and-manga" id="graphicManga">Graphic Books</button>
+                        <button class="bookCategoryButton" type="submit" name="bookCategory" value="graphic-books-and-manga" id="graphicManga">Graphic Books</button>
                     </li>
                 </ul>
             </form>
@@ -69,6 +70,29 @@
     <!-- Javascript Links  -->
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAxrdZeNYYyJJInY6xwye49GTbWyhHauQs",
+        authDomain: "the-book-nook-aa675.firebaseapp.com",
+        databaseURL: "https://the-book-nook-aa675.firebaseio.com",
+        projectId: "the-book-nook-aa675",
+        storageBucket: "the-book-nook-aa675.appspot.com",
+        messagingSenderId: "1028688366134",
+        appId: "1:1028688366134:web:d20b54803684f835c7e697"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>

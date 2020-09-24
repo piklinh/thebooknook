@@ -49,7 +49,7 @@ ul {
     flex: 1 0 250px;
 }
 
-.radioButton {
+.bookCategoryButton {
     display: inline-block;
     font-family: $secondaryFont;
     font-size: 4rem;
@@ -62,9 +62,9 @@ ul {
     cursor: pointer;
 }
 
-.radioButton:hover,
-.radioButton:focus,
-.radioButton:active {
+.bookCategoryButton:hover,
+.bookCategoryButton:focus,
+.bookCategoryButton:active {
         background-color: darken($secondaryColor, 20);
 }
 
@@ -78,9 +78,10 @@ ul {
     border-radius: 10px;
     display: flex;
     align-items: flex-start;
+    position: relative;
 }
 
-.rankContainer {
+.imageContainer {
     width: calc(30% - 30px);
     margin: 0 30px 20px 0;
 
@@ -89,10 +90,6 @@ ul {
         width: 100%;
         object-fit: contain;
     }
-}
-
-.infoContainer {
-    width: calc(70% - 30px);
 }
 
 h2,
@@ -107,6 +104,43 @@ h3 {
 
 .bookDetails {
     padding-bottom: 20px;
+}
+
+.contentContainer {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.startButton,
+.productUrl {
+    font-family: $primaryFont;
+    font-size: 2rem;
+    background-color: $fourthColor;
+    color: $tertiaryColor;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    &:hover{
+        color: $primaryFontColor;
+    }
+
+    &:focus{
+        border: solid 2px $borderColor;
+        background-color: lighten($fourthColor, 10);
+    }
+}
+
+.addBook {
+    background-color: inherit;
+    color: $fourthColor;
+    font-size: 4rem;
+
+    &hover,
+    &focus {
+        color: $primaryFontColor;
+        border: none;
+    }
 }
 
 .ranking {

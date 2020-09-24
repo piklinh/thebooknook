@@ -303,27 +303,6 @@ p {
   color: #383838;
 }
 
-.startButton,
-a {
-  font-family: "Roboto", sans-serif;
-  font-size: 2rem;
-  background-color: #E36387;
-  color: #FFFFFF;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-.startButton:hover,
-a:hover {
-  color: #383838;
-}
-
-.startButton:focus,
-a:focus {
-  border: solid 2px #B7B7B7;
-  background-color: #eb8ea8;
-}
-
 header {
   background-color: #DDF3F5;
   height: 100vh;
@@ -382,7 +361,7 @@ ul {
           flex: 1 0 250px;
 }
 
-.radioButton {
+.bookCategoryButton {
   display: inline-block;
   font-family: "Cormorant Garamond", serif;
   font-size: 4rem;
@@ -395,9 +374,9 @@ ul {
   cursor: pointer;
 }
 
-.radioButton:hover,
-.radioButton:focus,
-.radioButton:active {
+.bookCategoryButton:hover,
+.bookCategoryButton:focus,
+.bookCategoryButton:active {
   background-color: #50badf;
 }
 
@@ -413,22 +392,19 @@ ul {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  position: relative;
 }
 
-.rankContainer {
+.imageContainer {
   width: calc(30% - 30px);
   margin: 0 30px 20px 0;
 }
 
-.rankContainer img {
+.imageContainer img {
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-}
-
-.infoContainer {
-  width: calc(70% - 30px);
 }
 
 h2,
@@ -443,6 +419,48 @@ h3 {
 
 .bookDetails {
   padding-bottom: 20px;
+}
+
+.contentContainer {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.startButton,
+.productUrl {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  background-color: #E36387;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.startButton:hover,
+.productUrl:hover {
+  color: #383838;
+}
+
+.startButton:focus,
+.productUrl:focus {
+  border: solid 2px #B7B7B7;
+  background-color: #eb8ea8;
+}
+
+.addBook {
+  background-color: inherit;
+  color: #E36387;
+  font-size: 4rem;
+}
+
+.addBookhover, .addBookfocus {
+  color: #383838;
+  border: none;
 }
 
 .ranking {
@@ -512,15 +530,21 @@ footer a.creditLink:focus {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .rankContainer {
+  .imageContainer {
     width: 100%;
     margin: 0 0 20px 0;
   }
-  .rankContainer img {
+  .imageContainer img {
     width: 100%;
   }
-  .infoContainer {
+  .contentContainer {
     width: 100%;
+  }
+  .contentContainer .infoContainer {
+    width: 90%;
+  }
+  .contentContainer .buttonContainer {
+    width: 10%;
   }
 }
 
@@ -541,7 +565,7 @@ footer a.creditLink:focus {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  .radioButton {
+  .bookCategoryButton {
     font-size: 2rem;
   }
   h1 {
@@ -554,6 +578,9 @@ footer a.creditLink:focus {
   .headerTitle p,
   p.bookDescription {
     font-size: 2rem;
+  }
+  .addBook {
+    font-size: 2.5rem;
   }
   footer p,
   a.creditLink {

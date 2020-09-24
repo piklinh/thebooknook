@@ -69,23 +69,3 @@ p {
     font-size: 3rem;
     color: $primaryFontColor;
 }
-
-.startButton,
-a {
-    font-family: $primaryFont;
-    font-size: 2rem;
-    background-color: $fourthColor;
-    color: $tertiaryColor;
-    padding: 10px 20px;
-    border-radius: 5px;
-
-    &:hover{
-        color: $primaryFontColor;
-    }
-
-    &:focus{
-        border: solid 2px $borderColor;
-        background-color: lighten($fourthColor, 10);
-    }
-}
-

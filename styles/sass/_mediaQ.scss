@@ -37,8 +37,8 @@
         flex-wrap: wrap;
     }
 
-    .rankContainer {
-        width:100%;
+    .imageContainer {
+        width: 100%;
         margin: 0 0 20px 0;
 
         img {
@@ -46,9 +46,19 @@
         }
     }
 
-    .infoContainer {
+    .contentContainer {
         width: 100%;
+
+        .infoContainer { 
+            width: 90%;
+        }
+
+        .buttonContainer {
+            width: 10%;
+        }
     }
+
+    
 }
 
 
@@ -71,7 +81,7 @@
 
 @media (max-width: 480px) {
 
-    .radioButton {
+    .bookCategoryButton {
         font-size: 2rem;
     }
 
@@ -87,6 +97,10 @@
     .headerTitle p,
     p.bookDescription {
         font-size: 2rem;
+    }
+
+    .addBook {
+        font-size: 2.5rem;
     }
 
     footer p,
