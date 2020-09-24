@@ -49,7 +49,7 @@ ul {
     flex: 1 0 250px;
 }
 
-.radioButton {
+.bookCategoryButton {
     display: inline-block;
     font-family: $secondaryFont;
     font-size: 4rem;
@@ -62,9 +62,9 @@ ul {
     cursor: pointer;
 }
 
-.radioButton:hover,
-.radioButton:focus,
-.radioButton:active {
+.bookCategoryButton:hover,
+.bookCategoryButton:focus,
+.bookCategoryButton:active {
         background-color: darken($secondaryColor, 20);
 }
 

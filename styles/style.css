@@ -382,7 +382,7 @@ ul {
           flex: 1 0 250px;
 }
 
-.radioButton {
+.bookCategoryButton {
   display: inline-block;
   font-family: "Cormorant Garamond", serif;
   font-size: 4rem;
@@ -395,9 +395,9 @@ ul {
   cursor: pointer;
 }
 
-.radioButton:hover,
-.radioButton:focus,
-.radioButton:active {
+.bookCategoryButton:hover,
+.bookCategoryButton:focus,
+.bookCategoryButton:active {
   background-color: #50badf;
 }
 
@@ -500,7 +500,7 @@ footer a.creditLink:focus {
   .headerTitle p {
     font-size: 2.5rem;
   }
-  .radioButton {
+  .bookCategoryButton {
     font-size: 3rem;
     padding: 10px 20px;
   }
@@ -541,7 +541,7 @@ footer a.creditLink:focus {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  .radioButton {
+  .bookCategoryButton {
     font-size: 2rem;
   }
   h1 {

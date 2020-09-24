@@ -15,7 +15,7 @@ bookApp.getList = (listName) => {
             const bookRes = res.results.books;
 
             // Empties the text of the bookList div before forEach runs a loop
-            $('.bookList').text("");
+            $('.bookList').empty();
 
             // Use the forEach method to loop through the array, with a callback function containing the elements of the array, which are then stored in the parameter of 'el'
             bookRes.forEach((el) => {
@@ -41,8 +41,8 @@ bookApp.getList = (listName) => {
     }
 
 // Button that listens to input and updates the value
-bookApp.eventListener = () => {
-    $('.radioButton').on('click', function() {
+bookApp.bookCategoryButton = () => {
+    $('.bookCategoryButton').on('click', function(event) {
         event.preventDefault();
         const bookInput = $(this).val();
 
@@ -60,9 +60,8 @@ bookApp.scroll = () => {
 
 // To initialize the app
 bookApp.init = () => {
-    bookApp.scroll();
-    bookApp.eventListener();
-    bookApp.getList();
+    bookApp.bookCategoryButton();
+    bookApp.getList('picture-books');
 }
 
 // Document ready
