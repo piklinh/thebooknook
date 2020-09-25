@@ -60,6 +60,7 @@ bookApp.scroll = () => {
 
 // To initialize the app
 bookApp.init = () => {
+    bookApp.scroll();
     bookApp.bookCategoryButton();
     bookApp.getList('picture-books');
 }
