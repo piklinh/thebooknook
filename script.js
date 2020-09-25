@@ -13,6 +13,8 @@ bookApp.getList = (listName) => {
             // Empties the text of the bookList div
             $('.bookList').empty();
             bookApp.displayList(res.results.books);
+
+            const bookData = res.results.books;
             })
     }
 
@@ -56,12 +58,12 @@ bookApp.addFav = () => {
     const dbRef = firebase.database().ref("fav");
         const $addBook = $('.addBook');
 
-        $addBook.on('click', function(e) {
+        $addBook.on('click', function(e, bookData) {
             
             // const btn = e.target.attributes.value.value;
             const btn = e.target;
             
-            console.log(dataFromBookRes);
+            console.log(bookData);
             // console.log(btn);
 
             // const selectedBook = $(`.${btn}`).html();
